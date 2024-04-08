@@ -134,6 +134,7 @@ const en = {
         'wfInstanceId': 'WorkflowInstanceId',
         'normalInstance': 'Normal instance',
         'wfInstance': 'Workflow instance',
+        'dataDate': 'Data Date',
         'triggerTime': 'Trigger time',
         'finishedTime': 'Finished time',
         'log': 'Log',

@@ -138,6 +138,7 @@ const cn = {
         'wfInstanceId': '任务流实例ID',
         'normalInstance': '普通任务实例',
         'wfInstance': '任务流任务实例',
+        'dataDate': '数据时间',
         'triggerTime': '触发时间',
         'finishedTime': '结束时间',
         'log': '日志',

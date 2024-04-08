@@ -64,6 +64,7 @@
             {{fetchWFStatus(scope.row.status)}}
           </template>
         </el-table-column>
+        <el-table-column :show-overflow-tooltip="true" prop="dataDate" :label="$t('message.dataDate')" />
         <el-table-column :show-overflow-tooltip="true" prop="actualTriggerTime" :label="$t('message.triggerTime')" />
         <el-table-column :show-overflow-tooltip="true" prop="finishedTime" :label="$t('message.finishedTime')" />
 
