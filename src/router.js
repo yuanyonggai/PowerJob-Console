@@ -14,13 +14,13 @@ const router = new VueRouter({
                 { path: "/oms/home", meta: { title: '主页' }, component: () => import('./components/views/Home') },
                 { path: "/oms/job", meta: { title: '任务管理' }, component: () => import('./components/views/JobManager') },
                 { path: "/oms/instance", name: "instanceManager", meta: { title: '实例管理' }, component: () => import('./components/views/InstanceManager') },
-                { path: "/oms/workflow", meta: { title: '工作流管理' }, component: () => import('./components/views/WorkflowManager') },
-                { path: "/oms/wfinstance", meta: { title: '工作流管理' }, component: () => import('./components/views/WFInstanceManager') },
+                { path: "/oms/workflow", meta: { title: '任务流管理' }, component: () => import('./components/views/WorkflowManager') },
+                { path: "/oms/wfinstance", meta: { title: '任务流管理' }, component: () => import('./components/views/WFInstanceManager') },
                 { path: "/oms/template", meta: { title: '模版生成' }, component: () => import('./components/views/ContainerTemplate') },
                 { path: "/oms/containermanage", meta: { title: '容器管理' }, component: () => import('./components/views/ContainerManager') },
 
-                { path: "/oms/wfInstanceDetail", name: "WorkflowInstanceDetail", meta: { title: '工作流实例详情' }, component: () => import('./components/dag/WorkflowInstanceDetail') },
-                { path: "/oms/workflowEditor", name: "workflowEditor", meta: { title: '工作流编辑器' }, component: () => import('./components/dag/WorkflowEditor') }
+                { path: "/oms/wfInstanceDetail", name: "WorkflowInstanceDetail", meta: { title: '任务流实例详情' }, component: () => import('./components/dag/WorkflowInstanceDetail') },
+                { path: "/oms/workflowEditor", name: "workflowEditor", meta: { title: '任务流编辑器' }, component: () => import('./components/dag/WorkflowEditor') }
             ]
         },
         // 调试用
