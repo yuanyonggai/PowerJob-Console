@@ -134,6 +134,11 @@
                 this.axios.post("/workflow/list", this.workflowQueryContent).then((res) => {
                     that.workflowPageResult = res;
                 });
+                //设置默认调度参数
+                const url = "/system/defaultJobDate";
+                this.axios.get(url).then((result) => {
+                   that.runParameter = result;
+                }, error => that.$message.error(error));
             },
             /** 引入嵌套工作流节点 */
             onImportNode(data) {

@@ -163,7 +163,7 @@ const cn = {
         'statisticWindow': '统计窗口',
         'silenceWindow': '沉默窗口',
         'runByParameter': '参数运行',
-        'enteringParameter': '填写参数,示例:{"dataDateStart":"2024-01-01","dataDateEnd":"2024-01-02"}',
+        'enteringParameter': '填写参数',
 
 
         // 工作流管理
