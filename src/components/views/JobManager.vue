@@ -356,6 +356,7 @@
             <Exporter type="JOB" :mode="jobExporterMode" :target-id="jobExporterTargetId"  @finished="eventFromExporter"></Exporter>
         </el-dialog>
 
+        <!--参数运行-->
         <el-dialog
             :title="$t('message.runByParameter')"
             :visible="!!temporaryRowData"
@@ -366,6 +367,12 @@
                 :rows="4"
                 :placeholder="$t('message.enteringParameter')"
                 v-model="runParameter">
+            </el-input>
+            <el-input
+                type="textarea"
+                :rows="4"
+                :placeholder="$t('message.runDateParams')"
+                v-model="runDateParams">
             </el-input>
             <span slot="footer" class="dialog-footer">
                 <el-button @click="onClickRunCancel">{{$t('message.cancel')}}</el-button>
@@ -466,6 +473,8 @@
                 temporaryRowData: null,
                 // 运行参数
                 runParameter: null,
+                // 运行日期参数
+                runDateParams: null,
                 // 运行loading
                 runLoading: false,
 
@@ -521,6 +530,11 @@
 
                     that.jobInfoPageResult = res;
                 });
+                //设置默认调度参数
+                const url = "/system/defaultJobDate";
+                this.axios.get(url).then((result) => {
+                   that.runDateParams = result;
+                }, error => that.$message.error(error));
             },
             // 修改任务状态
             changeJobStatus(data) {
@@ -577,6 +591,9 @@
                 if (this.temporaryRowData && this.runParameter) {
                     url += `&instanceParams=${encodeURIComponent(this.runParameter)}`
                 }
+                if (this.temporaryRowData && this.runDateParams) {
+                    url += `&runDateParams=${encodeURIComponent(this.runDateParams)}`
+                }
                 this.runLoading = true;
                 this.axios.get(url).then(() => {
                     that.$message.success(this.$t('message.success'));
@@ -594,6 +611,7 @@
             onClickRunCancel() {
                 this.temporaryRowData = null;
                 this.runParameter = null;
+                this.runDateParams = null;
             },
             // 点击 删除任务
             onClickDeleteJob(data) {

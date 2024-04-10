@@ -72,6 +72,7 @@
         <el-table-column prop="status" :label="$t('message.status')" width="160">
           <template slot-scope="scope">{{fetchStatus(scope.row.status)}}</template>
         </el-table-column>
+        <el-table-column  :show-overflow-tooltip="true" prop="dataDate" :label="$t('message.dataDate')" width="100"/>
         <el-table-column  prop="actualTriggerTime" :label="$t('message.triggerTime')" width="150"/>
         <el-table-column  prop="finishedTime" :label="$t('message.finishedTime')" width="150"/>
 

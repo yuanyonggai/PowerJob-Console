@@ -159,6 +159,7 @@ const en = {
         'silenceWindow': 'SilenceWindow',
         'runByParameter': 'Run by parameter',
         'enteringParameter': 'Entering Parameter',
+        'runDateParams': 'Run Date Params',
         'taskTrackerBehavior':'TaskTracker Behavior',
 
         // workflowManage
