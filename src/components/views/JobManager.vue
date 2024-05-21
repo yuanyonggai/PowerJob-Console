@@ -408,7 +408,7 @@
                     concurrency: 5,
                     instanceTimeLimit: 0,
                     instanceRetryNum: 0,
-                    taskRetryNum: 1,
+                    taskRetryNum: 0,
                     dispatchStrategy: undefined,
                     dispatchStrategyConfig: undefined,
 

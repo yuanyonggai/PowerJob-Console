@@ -139,7 +139,7 @@
                   v-if="nodeInfo.type != '2'"
                 >
                   <el-input
-                    v-model="nodeInfo.nodeParams"
+                    v-model="nodeInfo.nodeParams" type="textarea" 
                     :style="{ width: 'calc(100% - 90px)' }"
                   />
                 </el-form-item>
