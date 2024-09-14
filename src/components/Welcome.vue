@@ -110,7 +110,7 @@
                 // 应用注册表单对象
                 appRegisterForm: {
                     appName: "",
-                    password: undefined
+                    password: ''
                 },
                 // 用户注册表单对象
                 userRegisterForm: {
@@ -121,8 +121,8 @@
                 },
                 // 控制台登陆对象
                 appLoginForm: {
-                    appName: undefined,
-                    password: undefined
+                    appName: "aml-worker",
+                    password: 'zasasa1212!~SAhh'
                 },
                 // 是否保持登录状态
                 stayLogged: true,
