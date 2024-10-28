@@ -43,7 +43,7 @@
                  <el-form-item>
                      <el-button type="primary" @click="login" class="loginWrap">{{$t('message.login')}}</el-button>
                  </el-form-item>
-                 <el-checkbox v-model="stayLogged" style="color: #f0f3f4">{{$t('message.stayLogged')}}</el-checkbox>
+                 <!--<el-checkbox v-model="stayLogged" style="color: #f0f3f4">{{$t('message.stayLogged')}}</el-checkbox>-->
              </el-form>
 
              <!-- 应用注册弹窗 -->
@@ -125,7 +125,7 @@
                     password: 'zasasa1212!~SAhh'
                 },
                 // 是否保持登录状态
-                stayLogged: true,
+                stayLogged: false,
             }
         },
         methods: {
