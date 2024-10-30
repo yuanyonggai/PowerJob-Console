@@ -121,8 +121,8 @@
                 },
                 // 控制台登陆对象
                 appLoginForm: {
-                    appName: "aml-worker",
-                    password: 'zasasa1212!~SAhh'
+                    appName: "",
+                    password: ''
                 },
                 // 是否保持登录状态
                 stayLogged: false,
@@ -173,6 +173,11 @@
                     if (this.stayLogged) {
                         window.localStorage.setItem('oms_auto_login', JSON.stringify(this.appLoginForm));
                     }
+
+                    if(that.appLoginForm.password != 'TK@aml20240101'){
+                        that.$message.error('密码错误');
+                        return;
+                    }                    
 
                     let appInfo = {
                         id: res,
