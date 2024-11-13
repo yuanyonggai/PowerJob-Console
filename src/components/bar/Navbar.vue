@@ -78,7 +78,12 @@
             // 退出当前应用
             onClickCloseConsole: function () {
                 window.localStorage.removeItem('oms_auto_login');
-                this.$router.push("/");
+                const that = this;
+                const url = "/appInfo/logout";
+                this.axios.get(url).then(() => {
+                    this.$router.push("/");
+                }, error => that.$message.error(error));
+                
             },
             // 处理系统设置的指令时间
             handleSettings: function (cmd) {

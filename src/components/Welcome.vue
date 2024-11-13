@@ -29,13 +29,8 @@
 
              <!-- 登录表单 -->
              <el-form ref="ruleForm" :model="appLoginForm" label-width="0px" class="loginWrap">
-                 <el-form-item label-width="">
-                     <el-autocomplete
-                             :trigger-on-focus="false"
-                             class="loginWrap"
-                             v-model="appLoginForm.appName"
-                             :fetch-suggestions="queryAppNames"
-                             :placeholder="$t('message.appName')"/>
+                 <el-form-item label-width="">                     
+                    <el-input v-model="appLoginForm.appName" class="loginWrap"/>
                  </el-form-item>
                  <el-form-item label-width="">
                      <el-input v-model="appLoginForm.password" :placeholder="$t('message.password')" type="password" show-password="true"/>
@@ -130,23 +125,23 @@
         },
         methods: {
             // 请求应用下拉框数据
-            queryAppNames(queryString, cb) {
-                const array = [];
-                const that = this;
-                const url = "/appInfo/list?condition=" + queryString;
-                this.axios.get(url).then((result) => {
-                    result.forEach(appInfo => {
-                       array.push({
-                           "value": appInfo.appName
-                       });
-                       cb(array);
-                    });
-                }, error => that.$message.error(error));
+            queryAppNames() {
+                //const array = [];
+                //const that = this;
+                //const url = "/appInfo/list?condition=" + queryString;
+                //this.axios.get(url).then((result) => {
+                //    result.forEach(appInfo => {
+                 //      array.push({
+                //           "value": appInfo.appName
+                 //      });
+                  //     cb(array);
+                  //  });
+               // }, error => that.$message.error(error));
 
-                clearTimeout(this.timeout);
-                this.timeout = setTimeout(() => {
-                    cb(array);
-                }, 3000);
+                //clearTimeout(this.timeout);
+                //this.timeout = setTimeout(() => {
+                //    cb(array);
+                //}, 3000);
             },
             // 注册应用
             registerApp() {
@@ -174,10 +169,10 @@
                         window.localStorage.setItem('oms_auto_login', JSON.stringify(this.appLoginForm));
                     }
 
-                    if(that.appLoginForm.password != 'TK@aml20240101'){
-                        that.$message.error('密码错误');
-                        return;
-                    }                    
+                    //if(that.appLoginForm.password != 'TK@aml20240101'){
+                    //    that.$message.error('密码错误');
+                    //    return;
+                    //}                    
 
                     let appInfo = {
                         id: res,
