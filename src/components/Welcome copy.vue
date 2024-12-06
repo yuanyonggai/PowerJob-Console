@@ -116,11 +116,11 @@
                 },
                 // 控制台登陆对象
                 appLoginForm: {
-                    appName: "aml-worker",
-                    password: '123456'
+                    appName: "",
+                    password: ''
                 },
                 // 是否保持登录状态
-                stayLogged: true,
+                stayLogged: false,
             }
         },
         methods: {
@@ -165,9 +165,9 @@
                 this.axios.post("/appInfo/assert", this.appLoginForm).then(res => {
 
                     // 勾选了保持登录状态，就开启自动登录，直接本地存用户名密码（内部系统浏览器明文存问题不大）
-                    //if (this.stayLogged) {
+                    if (this.stayLogged) {
                         window.localStorage.setItem('oms_auto_login', JSON.stringify(this.appLoginForm));
-                    //}
+                    }
 
                     //if(that.appLoginForm.password != 'TK@aml20240101'){
                     //    that.$message.error('密码错误');
